@@ -226,8 +226,8 @@ header.shrink {
     text-transform: uppercase;
     font-family: BerlinSansFBDemiBold;
     font-size: 11.75rem;
-    top: 203px;
-    right: -182px;
+    top: 253px;
+    right: -5px;
     color: var(--second-color);
     transform: rotate(-90deg);
 }
