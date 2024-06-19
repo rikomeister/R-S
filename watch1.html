@@ -22,18 +22,46 @@
         </a>
         <div class="main-menu-wrapper">
             <ul class="main-menu">
-                <li><a href="#" class="active">Начало</a></li>
-                <li><a href="#novi">Магазин</a></li>
-                <li><a href="#bs">Best sellers</a></li>
+                <li><a href="./index.html" class="active">Начало</a></li>
+                <li><a href="./index.html#novi">Магазин</a></li>
+                <li><a href="./index.html#bs">Best sellers</a></li>
                 <li><a href="contacts.html">Контакти</a></li>
             </ul>
         </div>
         <ul class="user-menu">
             <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
-            <li><a href="#"><i class='bx bx-user'></i></a></li>
+            <li><a href="#" id="box-icon"><i class='bx bx-user'></i></a></li>
         </ul>
     </header>
-    <!-- end header --> 
+    <!-- end header -->
+
+ <!-- The Modal -->
+ <div id="login-form" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content form-structor">
+        <span id="close-btn" class="close">&times;</span>
+        <div class="signup">
+            <h2 class="form-title" id="signup-title"><span>or</span>Sign up</h2>
+            <div class="form-holder">
+                <input type="text" class="input" placeholder="Name" />
+                <input type="email" class="input" placeholder="Email" />
+                <input type="password" class="input" placeholder="Password" />
+            </div>
+            <button class="submit-btn">Sign up</button>
+        </div>
+        <div class="login slide-up">
+            <div class="center">
+                <h2 class="form-title" id="login-title"><span>or</span>Log in</h2>
+                <div class="form-holder">
+                    <input type="email" class="input" placeholder="Email" />
+                    <input type="password" class="input" placeholder="Password" />
+                </div>
+                <button class="submit-btn">Log in</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <main class="container">
 
@@ -104,6 +132,7 @@
   <!-- end footer section -->
 
   <!-- app js -->
+  <script src="./login.js"> </script>
   <script src="./app.js"></script>
 
 
