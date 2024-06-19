@@ -31,6 +31,7 @@ body {
     color: var(--txt-color);
     font-family: MyriadProCondensed, sans-serif;
     overflow-x: hidden;
+    padding-top: 80px;
 }
 
 a {
@@ -60,6 +61,7 @@ header {
     padding: 0 var(--header-padding);
     z-index: 99;
     transition: height 0.3s ease 0s, background-color 0.3s ease 0s;
+    padding-bottom: 80px;
 }
 
 header.shrink {
@@ -74,6 +76,13 @@ header.shrink {
     align-items: center;
     justify-content: center;
     pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px;
+    display: flex;
 }
 
 .main-menu {
