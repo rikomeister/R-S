@@ -61,7 +61,6 @@ header {
     padding: 0 var(--header-padding);
     z-index: 99;
     transition: height 0.3s ease 0s, background-color 0.3s ease 0s;
-    padding-bottom: 80px;
 }
 
 header.shrink {
