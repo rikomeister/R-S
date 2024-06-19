@@ -148,6 +148,11 @@ input[type=submit]:hover {
 }
 
 
+
+.loginFrm{ margin-bottom:8px;}
+.loginFrm .control-group{padding:8px 14px 0; margin-bottom:0 }
+
+
 footer {
     background-color: var(--second-color);
     margin-top: 90px;
