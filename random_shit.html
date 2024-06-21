@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +15,7 @@
     <link rel="stylesheet" href="./boxicons-2.0.7/css/boxicons.min.css">
     <!-- app css -->
     <link rel="stylesheet" href="./grid.css">
-    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="./random_shit.css">
 
     <script src="main.js" defer></script>
 </head>
@@ -37,34 +42,61 @@
     </header>
     <!-- end header -->
 
- <!-- The Modal -->
-<div id="login-form" class="modal">
-    <form id="signup-form">
-        <!-- Modal content -->
-        <div class="modal-content form-structor">
-            <span id="close-btn" class="close">&times;</span>
-            <div class="signup">
-                <h2 class="form-title" id="signup-title"><span>or</span>Sign up</h2>
-                <div class="form-holder">
-                    <input type="text" class="input" placeholder="Name" name="firstName" required />
-                    <input type="email" class="input" placeholder="Email" name="email" required />
-                    <input type="password" class="input" placeholder="Password" name="password" required />
-                </div>
-                <button type="submit" class="submit-btn">Sign up</button>
-            </div>
-            <div class="login slide-up">
-                <div class="center">
-                    <h2 class="form-title" id="login-title"><span>or</span>Log in</h2>
+    <div id="user-settings-form" class="modal">
+        <form id="settings-form">
+            <!-- Modal content -->
+            <div class="modal-content form-structor">
+                <span id="close-btn" class="close">&times;</span>
+                <div class="update-info">
+                    <h2 class="form-title" id="update-info-title"><span>or</span>Update Info</h2>
                     <div class="form-holder">
-                        <input type="email" class="input" placeholder="Email" />
-                        <input type="password" class="input" placeholder="Password" />
+                        <input type="text" class="input" placeholder="New Name" name="newName" required />
+                        <input type="password" class="input" placeholder="Current Password" name="currentPassword" required />
+                        <input type="password" class="input" placeholder="New Password" name="newPassword" required />
                     </div>
-                    <button class="submit-btn">Log in</button>
+                    <button type="submit" class="submit-btn">Update</button>
                 </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
+    
+    <!-- Optional JavaScript to handle form submission and modal display -->
+    <script>
+    document.getElementById('settings-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        const newName = event.target.newName.value;
+        const currentPassword = event.target.currentPassword.value;
+        const newPassword = event.target.newPassword.value;
+    
+        // Handle form submission here, e.g., send the data to the server using fetch
+        fetch('/update-user-info', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ newName, currentPassword, newPassword })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('User info updated successfully!');
+                // Close the modal or perform any other necessary actions
+            } else {
+                alert('Error updating user info: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while updating user info.');
+        });
+    });
+    
+    // Close the modal when the close button is clicked
+    document.getElementById('close-btn').addEventListener('click', function() {
+        document.getElementById('user-settings-form').style.display = 'none';
+    });
+    </script>
 
 
     <!-- hero slide -->
